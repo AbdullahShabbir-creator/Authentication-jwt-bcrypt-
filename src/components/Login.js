@@ -34,7 +34,7 @@ const Login = () => {
   
         if (response.ok) {
             setSuccess('Login successful');
-            sessionStorage.setItem('token', data.token);
+            localStorage.setItem('token', data.token);
             window.location.href = '/dashboard';
           
         } else {

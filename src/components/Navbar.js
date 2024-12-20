@@ -8,7 +8,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const handleLogout = async () => {
     try {
-      const token = sessionStorage.getItem('token'); 
+      const token = localStorage.getItem('token'); 
   
       if (!token) {
         console.log('No token found');
@@ -24,7 +24,7 @@ const Navbar = () => {
   
       const data = await response.json();
       console.log(data.message);
-      sessionStorage.removeItem('token');
+      localStorage.removeItem('token');
  
       navigate('/login');
     } catch (error) {
